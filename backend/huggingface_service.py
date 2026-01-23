@@ -16,8 +16,8 @@ class HuggingFaceService:
                 "Please create a .env file with your API key."
             )
         
-        # Using Gemma 2 (Chat model) which should work with chat_completion
-        self.model = "google/gemma-2-2b-it"
+        # Using Qwen 2.5 7B Instruct which has excellent support on the HF Inference API
+        self.model = "Qwen/Qwen2.5-7B-Instruct"
         self.client = InferenceClient(model=self.model, token=api_key)
     
     def _get_age_context(self, age: int) -> dict:
